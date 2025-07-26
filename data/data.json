@@ -1,0 +1,35 @@
+{
+    "sejarah": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet facilisis urna. Praesent in libero vel turpis pellentesque egestas sit amet vel nunc. Nam feugiat lorem a sem facilisis, ut convallis orci malesuada. Mauris ac eros eget magna imperdiet varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    "sambutan": {
+        "nama": "Bapak Hadian Rahayu",
+        "jabatan": "Kepala Desa Cikelat",
+        "pesan": "Assalamualaikum,\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed fermentum mauris. Fusce euismod massa vel velit luctus, sed vestibulum lacus fringilla. Integer eget turpis et justo malesuada dictum. Sed euismod at erat eget imperdiet. Vivamus nec sem vitae libero sollicitudin eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed fermentum mauris. Fusce euismod massa vel velit luctus, sed vestibulum lacus fringilla. Integer eget turpis et justo malesuada dictum. Sed euismod at erat eget imperdiet. Vivamus nec sem vitae libero sollicitudin eleifend."
+    },
+    "jumlahPenduduk": 2154,
+    "jumlahKK": 615,
+    "jumlahLaki": 1102,
+    "jumlahPerempuan": 1052,
+    "grafik": {
+    "umur": {
+      "labels": ["0-4", "5-9", "10-14", "15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54", "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85+"],
+      "laki":      [70, 75, 80, 70, 65, 60, 55, 50, 45, 40, 35, 32, 30, 28, 26, 20, 12, 9],
+      "perempuan": [65, 70, 75, 70, 65, 60, 55, 52, 48, 44, 40, 35, 30, 28, 24, 20, 15, 6]
+    },
+    "dusun": {
+      "labels": ["Bangbayang", "Cikelat", "Cikupa", "Nagrak"],
+      "data":   [520, 540, 550, 544]
+    },
+    "pendidikan": {
+      "labels": ["Tidak/belum sekolah", "Belum tamat SD", "Tamat SD", "SMP", "SMA", "Diploma I/II", "Diploma III", "S1", "S2", "S3"],
+      "data":   [100, 120, 350, 400, 520, 80, 90, 300, 150, 44]
+    },
+    "perkawinan": {
+      "labels": ["Belum Kawin", "Kawin", "Cerai Mati", "Cerai Hidup"],
+      "data":   [780, 1220, 100, 54]
+    },
+    "agama": {
+      "labels": ["Islam", "Kristen", "Katolik", "Hindu", "Buddha", "Konghucu", "Kepercayaan lainnya"],
+      "data":   [2100, 20, 10, 8, 5, 5, 6]
+    }
+  }
+}

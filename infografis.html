@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infografis Desa Cikelat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-inter">
+    <header id="navbar" class="bg-[#129990] text-white transition-transform duration-300 fixed w-full top-0 z-50">
+        <!-- Overlay & Sidebar Mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 h-full w-3/5 max-w-[320px] bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                <h2 class="text-xl font-bold text-[#129990]">NAVIGASI</h2>
+                <button id="closeButton"
+                    class="text-gray-500 hover:text-gray-700 focus:outline-none lg:hidden">✕</button>
+            </div>
+            <div class="px-6 py-4 space-y-4 text-base font-medium text-gray-700">
+                <a href="index.html" class="block hover:text-[#129990] transition">Beranda</a>
+                <a href="profil.html" class="block hover:text-[#129990] transition">Profil Desa</a>
+                <a href="infografis.html" class="block hover:text-[#129990] transition">Infografis</a>
+                <a href="peta.html" class="block hover:text-[#129990] transition">Peta</a>
+                <a href="berita.html" class="block hover:text-[#129990] transition">Berita</a>
+                <a href="belanja.html" class="block hover:text-[#129990] transition">Belanja</a>
+            </div>
+        </div>
+
+        <div class="w-full flex items-center justify-between px-0 py-4">
+            <div class="flex items-center space-x-4 pl-4">
+                <img src="assets/img/sukabumi.png" alt="Logo Sukabumi" class="h-16 w-16 object-contain" />
+                <div class="-ml-2">
+                    <div class="text-xl font-bold leading-tight">Desa Cikelat</div>
+                    <div class="text-sm text-white/80">Kabupaten Sukabumi</div>
+                </div>
+            </div>
+            <div class="lg:hidden px-4 py-2 flex justify-end">
+                <button id="menuButton">
+                    <img src="assets/img/ham.png" alt="Menu" class="w-8 h-8">
+                </button>
+            </div>
+            <div class="hidden lg:flex pr-4 max-[899px]:hidden">
+                <nav class="flex-nowrap flex space-x-10 text-lg font-semibold pr-6 max-w-[768px] overflow-hidden">
+                    <a href="index.html" class="hover:underline">Beranda</a>
+                    <a href="profil.html" class="hover:underline">Profil Desa</a>
+                    <a href="infografis.html" class="hover:underline">Infografis</a>
+                    <a href="peta.html" class="hover:underline">Peta</a>
+                    <a href="berita.html" class="hover:underline">Berita</a>
+                    <a href="belanja.html" class="hover:underline">Belanja</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto space-y-16">
+
+            <!-- Jumlah Penduduk -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Jumlah Penduduk</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Total -->
+                        <div class="flex bg-white rounded-xl shadow-md overflow-hidden">
+                            <div
+                                class="bg-gradient-to-b from-[#129990] to-[#0e7e78] text-white w-1/3 flex flex-col justify-center items-center p-4">
+                                <div class="text-3xl font-bold" id="jumlahPenduduk">0</div>
+                                <div class="text-sm">Penduduk</div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-center w-2/3">
+                                <h3 class="text-lg font-semibold text-gray-800">Jumlah Penduduk</h3>
+                                <p class="text-sm text-gray-700">Total seluruh penduduk yang tinggal di Desa Cikelat.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- KK -->
+                        <div class="flex bg-white rounded-xl shadow-md overflow-hidden">
+                            <div
+                                class="bg-gradient-to-b from-[#129990] to-[#0e7e78] text-white w-1/3 flex flex-col justify-center items-center p-4">
+                                <div class="text-3xl font-bold" id="jumlahKK">0</div>
+                                <div class="text-sm text-center">Kepala Keluarga</div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-center w-2/3">
+                                <h3 class="text-lg font-semibold text-gray-800">Jumlah Kepala Keluarga</h3>
+                                <p class="text-sm text-gray-700">Jumlah total kepala keluarga yang terdata di Desa
+                                    Cikelat.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Laki -->
+                        <div class="flex bg-white rounded-xl shadow-md overflow-hidden">
+                            <div
+                                class="bg-gradient-to-b from-[#129990] to-[#0e7e78] text-white w-1/3 flex flex-col justify-center items-center p-4">
+                                <div class="text-3xl font-bold" id="jumlahLaki">0</div>
+                                <div class="text-sm">Laki-laki</div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-center w-2/3">
+                                <h3 class="text-lg font-semibold text-gray-800">Penduduk Laki-laki</h3>
+                                <p class="text-sm text-gray-700">Jumlah penduduk laki-laki di Desa Cikelat.</p>
+                            </div>
+                        </div>
+                        <!-- Perempuan -->
+                        <div class="flex bg-white rounded-xl shadow-md overflow-hidden">
+                            <div
+                                class="bg-gradient-to-b from-[#129990] to-[#0e7e78] text-white w-1/3 flex flex-col justify-center items-center p-4">
+                                <div class="text-3xl font-bold" id="jumlahPerempuan">0</div>
+                                <div class="text-sm">Perempuan</div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-center w-2/3">
+                                <h3 class="text-lg font-semibold text-gray-800">Penduduk Perempuan</h3>
+                                <p class="text-sm text-gray-700">Jumlah penduduk perempuan di Desa Cikelat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Umur -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Kelompok Umur</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <canvas id="umurChart" height="200"></canvas>
+                </section>
+            </div>
+
+            <!-- Dusun -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Distribusi Penduduk per Dusun</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <canvas id="dusunChart" height="300"></canvas>
+                </section>
+            </div>
+
+            <!-- Pendidikan -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Pendidikan Terakhir</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <canvas id="pendidikanChart" height="300"></canvas>
+                </section>
+            </div>
+
+            <!-- Perkawinan -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Status Perkawinan</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <canvas id="kawinChart" height="300"></canvas>
+                </section>
+            </div>
+
+            <!-- Agama -->
+            <div class="space-y-4">
+                <h2 class="text-3xl font-bold text-center text-[#096B68] mb-8">Agama</h2>
+                <section class="bg-[#FFFBDE] rounded-xl shadow-lg p-6">
+                    <canvas id="agamaChart" height="300"></canvas>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e7e78] text-white mt-20">
+        <div class="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm md:text-base">
+            <!-- Informasi Desa -->
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Desa Cikelat</h3>
+                <p>Kecamatan Cisolok, Kabupaten Sukabumi<br>Provinsi Jawa Barat, Indonesia</p>
+            </div>
+
+            <!-- Navigasi -->
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Navigasi</h3>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="profil.html" class="hover:underline">Profil Desa</a></li>
+                    <li><a href="infografis.html" class="hover:underline">Infografis</a></li>
+                    <li><a href="peta.html" class="hover:underline">Peta</a></li>
+                    <li><a href="berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="belanja.html" class="hover:underline">Belanja</a></li>
+                </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Kontak</h3>
+                <p>Email: <a href="mailto:info@desacikelat.id" class="underline">info@desacikelat.id</a></p>
+                <p>Telepon: <a href="tel:+6281234567890" class="underline">+62 812-3456-7890</a></p>
+            </div>
+        </div>
+
+        <div class="text-center py-4 border-t border-white/20 text-sm bg-[#0c605b]">
+            &copy; 2025 Desa Cikelat. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script>
+        fetch('data/data.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('jumlahPenduduk').textContent = data.jumlahPenduduk;
+                document.getElementById('jumlahKK').textContent = data.jumlahKK;
+                document.getElementById('jumlahLaki').textContent = data.jumlahLaki;
+                document.getElementById('jumlahPerempuan').textContent = data.jumlahPerempuan;
+
+                new Chart(document.getElementById('umurChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.grafik.umur.labels,
+                        datasets: [
+                            { label: 'Laki-laki', backgroundColor: '#129990', data: data.grafik.umur.laki },
+                            { label: 'Perempuan', backgroundColor: '#f59e0b', data: data.grafik.umur.perempuan }
+                        ]
+                    },
+                    options: { indexAxis: 'y', responsive: true, plugins: { legend: { position: 'bottom' } } }
+                });
+
+                new Chart(document.getElementById('dusunChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: data.grafik.dusun.labels,
+                        datasets: [{
+                            label: 'Penduduk',
+                            data: data.grafik.dusun.data,
+                            backgroundColor: ['#129990', '#34d399', '#fbbf24', '#6366f1']
+                        }]
+                    },
+                    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+                });
+
+                new Chart(document.getElementById('pendidikanChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.grafik.pendidikan.labels,
+                        datasets: [{ label: 'Jumlah', backgroundColor: '#129990', data: data.grafik.pendidikan.data }]
+                    },
+                    options: { responsive: true, plugins: { legend: { display: false } } }
+                });
+
+                new Chart(document.getElementById('kawinChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.grafik.perkawinan.labels,
+                        datasets: [{ label: 'Jumlah', backgroundColor: '#129990', data: data.grafik.perkawinan.data }]
+                    },
+                    options: { responsive: true, plugins: { legend: { display: false } } }
+                });
+
+                new Chart(document.getElementById('agamaChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.grafik.agama.labels,
+                        datasets: [{ label: 'Jumlah', backgroundColor: '#129990', data: data.grafik.agama.data }]
+                    },
+                    options: { responsive: true, plugins: { legend: { display: false } } }
+                });
+            });
+    </script>
+</body>
+
+</html>

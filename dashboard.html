@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard CMS Desa Cikelat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans p-6">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+    <h1 class="text-2xl font-bold text-[#129990] mb-4">CMS Editor Desa Cikelat</h1>
+
+    <form id="cms-form" class="space-y-6">
+      <div>
+        <label class="block font-semibold">Sejarah Desa</label>
+        <textarea id="sejarah" rows="4" class="w-full mt-1 p-2 border rounded" placeholder="Sejarah desa..."></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold">Nama Kepala Desa</label>
+        <input id="nama" type="text" class="w-full mt-1 p-2 border rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold">Jabatan</label>
+        <input id="jabatan" type="text" class="w-full mt-1 p-2 border rounded" />
+      </div>
+
+      <div>
+        <label class="block font-semibold">Pesan Sambutan</label>
+        <textarea id="pesan" rows="4" class="w-full mt-1 p-2 border rounded"></textarea>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block font-semibold">Jumlah Penduduk</label>
+          <input id="jumlahPenduduk" type="number" class="w-full mt-1 p-2 border rounded" />
+        </div>
+        <div>
+          <label class="block font-semibold">Jumlah KK</label>
+          <input id="jumlahKK" type="number" class="w-full mt-1 p-2 border rounded" />
+        </div>
+        <div>
+          <label class="block font-semibold">Laki-laki</label>
+          <input id="jumlahLaki" type="number" class="w-full mt-1 p-2 border rounded" />
+        </div>
+        <div>
+          <label class="block font-semibold">Perempuan</label>
+          <input id="jumlahPerempuan" type="number" class="w-full mt-1 p-2 border rounded" />
+        </div>
+      </div>
+
+      <div class="pt-4 flex justify-end">
+        <button type="button" id="download" class="bg-[#129990] text-white px-4 py-2 rounded hover:bg-[#0e7e78]">
+          Download JSON
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#0e7e78] text-white mt-20">
+    <div class="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm md:text-base">
+      <!-- Informasi Desa -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Desa Cikelat</h3>
+        <p>Kecamatan Cisolok, Kabupaten Sukabumi<br>Provinsi Jawa Barat, Indonesia</p>
+      </div>
+
+      <!-- Navigasi -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Navigasi</h3>
+        <ul class="space-y-1">
+          <li><a href="index.html" class="hover:underline">Beranda</a></li>
+          <li><a href="profil.html" class="hover:underline">Profil Desa</a></li>
+          <li><a href="infografis.html" class="hover:underline">Infografis</a></li>
+          <li><a href="peta.html" class="hover:underline">Peta</a></li>
+          <li><a href="berita.html" class="hover:underline">Berita</a></li>
+          <li><a href="belanja.html" class="hover:underline">Belanja</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Kontak</h3>
+        <p>Email: <a href="mailto:info@desacikelat.id" class="underline">info@desacikelat.id</a></p>
+        <p>Telepon: <a href="tel:+6281234567890" class="underline">+62 812-3456-7890</a></p>
+      </div>
+    </div>
+
+    <div class="text-center py-4 border-t border-white/20 text-sm bg-[#0c605b]">
+      &copy; 2025 Desa Cikelat. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="assets/js/navbar.js"></script>
+  <script>
+    // Ambil data.json lalu isi ke form
+    fetch('data/data.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Gagal memuat data.json');
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('sejarah').value = data.sejarah || '';
+        document.getElementById('nama').value = data.sambutan?.nama || '';
+        document.getElementById('jabatan').value = data.sambutan?.jabatan || '';
+        document.getElementById('pesan').value = data.sambutan?.pesan || '';
+        document.getElementById('jumlahPenduduk').value = data.jumlahPenduduk || '';
+        document.getElementById('jumlahKK').value = data.jumlahKK || '';
+        document.getElementById('jumlahLaki').value = data.jumlahLaki || '';
+        document.getElementById('jumlahPerempuan').value = data.jumlahPerempuan || '';
+      })
+      .catch(error => {
+        alert('Gagal mengambil data: ' + error.message);
+        console.error(error);
+      });
+
+    // Tombol download hasil edit
+    document.getElementById('download').addEventListener('click', () => {
+      const json = {
+        sejarah: document.getElementById('sejarah').value,
+        sambutan: {
+          nama: document.getElementById('nama').value,
+          jabatan: document.getElementById('jabatan').value,
+          pesan: document.getElementById('pesan').value
+        },
+        jumlahPenduduk: parseInt(document.getElementById('jumlahPenduduk').value),
+        jumlahKK: parseInt(document.getElementById('jumlahKK').value),
+        jumlahLaki: parseInt(document.getElementById('jumlahLaki').value),
+        jumlahPerempuan: parseInt(document.getElementById('jumlahPerempuan').value)
+      };
+
+      const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'data.json';
+      link.click();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Berita Desa Cikelat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-inter">
+
+    <!-- Navbar -->
+    <header id="navbar" class="bg-[#129990] text-white transition-transform duration-300 fixed w-full top-0 z-50">
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 h-full w-3/5 max-w-[320px] bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                <h2 class="text-xl font-bold text-[#129990]">NAVIGASI</h2>
+                <button id="closeButton"
+                    class="text-gray-500 hover:text-gray-700 focus:outline-none lg:hidden">✕</button>
+            </div>
+            <div class="px-6 py-4 space-y-4 text-base font-medium text-gray-700">
+                <a href="index.html" class="block hover:text-[#129990] transition">Beranda</a>
+                <a href="profil.html" class="block hover:text-[#129990] transition">Profil Desa</a>
+                <a href="infografis.html" class="block hover:text-[#129990] transition">Infografis</a>
+                <a href="peta.html" class="block hover:text-[#129990] transition">Peta</a>
+                <a href="berita.html" class="block hover:text-[#129990] transition">Berita</a>
+                <a href="belanja.html" class="block hover:text-[#129990] transition">Belanja</a>
+            </div>
+        </div>
+
+        <div class="w-full flex items-center justify-between px-0 py-4">
+            <div class="flex items-center space-x-4 pl-4">
+                <img src="assets/img/sukabumi.png" alt="Logo Sukabumi" class="h-16 w-16 object-contain" />
+                <div class="-ml-2">
+                    <div class="text-xl font-bold leading-tight">Desa Cikelat</div>
+                    <div class="text-sm text-white/80">Kabupaten Sukabumi</div>
+                </div>
+            </div>
+            <div class="lg:hidden px-4 py-2 flex justify-end">
+                <button id="menuButton">
+                    <img src="assets/img/ham.png" alt="Menu" class="w-8 h-8" />
+                </button>
+            </div>
+            <div class="hidden lg:flex pr-4 max-[899px]:hidden">
+                <nav class="flex-nowrap flex space-x-10 text-lg font-semibold pr-6 max-w-[768px] overflow-hidden">
+                    <a href="index.html" class="hover:underline">Beranda</a>
+                    <a href="profil.html" class="hover:underline">Profil Desa</a>
+                    <a href="infografis.html" class="hover:underline">Infografis</a>
+                    <a href="peta.html" class="hover:underline">Peta</a>
+                    <a href="berita.html" class="hover:underline underline text-white">Berita</a>
+                    <a href="belanja.html" class="hover:underline">Belanja</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+    <main class="pt-36 pb-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold text-center text-[#096B68] mb-10">Berita Desa</h1>
+
+            <!-- Grid Berita -->
+            <div id="berita-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Berita akan di-render oleh JS -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="mt-10 flex justify-center space-x-2">
+                <!-- Tombol pagination akan diisi dengan JavaScript -->
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#0e7e78] text-white mt-20">
+        <div class="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm md:text-base">
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Desa Cikelat</h3>
+                <p>Kecamatan Cisolok, Kabupaten Sukabumi<br />Provinsi Jawa Barat, Indonesia</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Navigasi</h3>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="profil.html" class="hover:underline">Profil Desa</a></li>
+                    <li><a href="infografis.html" class="hover:underline">Infografis</a></li>
+                    <li><a href="peta.html" class="hover:underline">Peta</a></li>
+                    <li><a href="berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="belanja.html" class="hover:underline">Belanja</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Kontak</h3>
+                <p>Email: <a href="mailto:info@desacikelat.id" class="underline">info@desacikelat.id</a></p>
+                <p>Telepon: <a href="tel:+6281234567890" class="underline">+62 812-3456-7890</a></p>
+            </div>
+        </div>
+        <div class="text-center py-4 border-t border-white/20 text-sm bg-[#0c605b]">
+            &copy; 2025 Desa Cikelat. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Script untuk Menu -->
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script>
+        const beritaDummy = [
+            {
+                tanggal: "19 Juli 2025",
+                judul: "Warga Bergotong Royong Bangun Jalan Akses Baru Menuju Perkebunan Utama",
+                gambar: "https://source.unsplash.com/600x400/?village"
+            },
+            {
+                tanggal: "15 Juli 2025",
+                judul: "Pemerintah Desa Luncurkan Program Pengelolaan Sampah Mandiri Berbasis Rumah Tangga",
+                gambar: "https://source.unsplash.com/600x400/?community"
+            },
+            {
+                tanggal: "10 Juli 2025",
+                judul: "Perayaan HUT Desa ke-75 Meriah dengan Lomba dan Pameran Produk UMKM",
+                gambar: "https://source.unsplash.com/600x400/?event"
+            },
+            {
+                tanggal: "08 Juli 2025",
+                judul: "Desa Cikelat Raih Penghargaan Desa Terbersih Se-Kabupaten Sukabumi",
+                gambar: "https://source.unsplash.com/600x400/?award"
+            },
+            {
+                tanggal: "05 Juli 2025",
+                judul: "Pelatihan Digital Marketing untuk UMKM Lokal Dilaksanakan di Balai Desa",
+                gambar: "https://source.unsplash.com/600x400/?training"
+            },
+            {
+                tanggal: "02 Juli 2025",
+                judul: "Musyawarah Desa Tentukan Prioritas Pembangunan Tahun Depan",
+                gambar: "https://source.unsplash.com/600x400/?meeting"
+            }
+            // Tambah data jika perlu
+        ];
+
+        const beritaPerHalaman = 6;
+        let halamanSaatIni = 1;
+
+        const beritaContainer = document.getElementById('berita-container');
+        const paginationContainer = document.getElementById('pagination');
+
+        function renderBerita(page) {
+            beritaContainer.innerHTML = '';
+            const mulai = (page - 1) * beritaPerHalaman;
+            const selesai = mulai + beritaPerHalaman;
+            const dataHalaman = beritaDummy.slice(mulai, selesai);
+
+            dataHalaman.forEach((item, index) => {
+                const beritaIndex = mulai + index; // index global
+                const card = `
+        <a href="berita-detail.html?id=${beritaIndex}" class="block bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-200">
+          <img src="${item.gambar}" alt="Foto Berita" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <p class="text-sm text-gray-500 mb-1">${item.tanggal}</p>
+            <h3 class="text-lg font-semibold text-gray-800 line-clamp-3">
+              ${item.judul}
+            </h3>
+          </div>
+        </a>
+        `;
+                beritaContainer.innerHTML += card;
+            });
+        }
+
+        function renderPagination() {
+            paginationContainer.innerHTML = '';
+            const totalHalaman = Math.ceil(beritaDummy.length / beritaPerHalaman);
+
+            // Tombol sebelumnya
+            const prev = document.createElement('button');
+            prev.innerHTML = '«';
+            prev.className = 'px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition';
+            prev.disabled = halamanSaatIni === 1;
+            prev.onclick = () => {
+                halamanSaatIni--;
+                updateHalaman();
+            };
+            paginationContainer.appendChild(prev);
+
+            // Tombol halaman
+            for (let i = 1; i <= totalHalaman; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = `px-4 py-2 rounded-md font-semibold ${i === halamanSaatIni ? 'bg-[#129990] text-white' : 'bg-white border border-gray-300 hover:bg-gray-100 transition'}`;
+                btn.onclick = () => {
+                    halamanSaatIni = i;
+                    updateHalaman();
+                };
+                paginationContainer.appendChild(btn);
+            }
+
+            // Tombol selanjutnya
+            const next = document.createElement('button');
+            next.innerHTML = '»';
+            next.className = 'px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition';
+            next.disabled = halamanSaatIni === totalHalaman;
+            next.onclick = () => {
+                halamanSaatIni++;
+                updateHalaman();
+            };
+            paginationContainer.appendChild(next);
+        }
+
+        function updateHalaman() {
+            renderBerita(halamanSaatIni);
+            renderPagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Inisialisasi
+        updateHalaman();
+    </script>
+
+
+    <!-- Untuk line-clamp -->
+    <style>
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</body>
+
+</html>
