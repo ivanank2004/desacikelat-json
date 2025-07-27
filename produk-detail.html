@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Produk - Desa Cikelat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-inter">
+
+    <!-- Navbar -->
+    <header id="navbar" class="bg-[#129990] text-white transition-transform duration-300 fixed w-full top-0 z-50">
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+        <div id="mobileMenu"
+            class="fixed top-0 right-0 h-full w-3/5 max-w-[320px] bg-white z-50 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+                <h2 class="text-xl font-bold text-[#129990]">NAVIGASI</h2>
+                <button id="closeButton"
+                    class="text-gray-500 hover:text-gray-700 focus:outline-none lg:hidden">✕</button>
+            </div>
+            <div class="px-6 py-4 space-y-4 text-base font-medium text-gray-700">
+                <a href="index.html" class="block hover:text-[#129990] transition">Beranda</a>
+                <a href="profil.html" class="block hover:text-[#129990] transition">Profil Desa</a>
+                <a href="infografis.html" class="block hover:text-[#129990] transition">Infografis</a>
+                <a href="peta.html" class="block hover:text-[#129990] transition">Peta</a>
+                <a href="berita.html" class="block hover:text-[#129990] transition">Berita</a>
+                <a href="belanja.html" class="block hover:text-[#129990] transition">Belanja</a>
+            </div>
+        </div>
+
+        <div class="w-full flex items-center justify-between px-0 py-4">
+            <div class="flex items-center space-x-4 pl-4">
+                <img src="assets/img/sukabumi.png" alt="Logo Sukabumi" class="h-16 w-16 object-contain" />
+                <div class="-ml-2">
+                    <div class="text-xl font-bold leading-tight">Desa Cikelat</div>
+                    <div class="text-sm text-white/80">Kabupaten Sukabumi</div>
+                </div>
+            </div>
+            <div class="lg:hidden px-4 py-2 flex justify-end">
+                <button id="menuButton">
+                    <img src="assets/img/ham.png" alt="Menu" class="w-8 h-8" />
+                </button>
+            </div>
+            <div class="hidden lg:flex pr-4 max-[899px]:hidden">
+                <nav class="flex-nowrap flex space-x-10 text-lg font-semibold pr-6 max-w-[768px] overflow-hidden">
+                    <a href="index.html" class="hover:underline">Beranda</a>
+                    <a href="profil.html" class="hover:underline">Profil Desa</a>
+                    <a href="infografis.html" class="hover:underline">Infografis</a>
+                    <a href="peta.html" class="hover:underline">Peta</a>
+                    <a href="berita.html" class="hover:underline text-white">Berita</a>
+                    <a href="belanja.html" class="hover:underline">Belanja</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-36 pb-20 px-4">
+        <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-10 flex flex-col gap-10 lg:flex-row">
+            <div class="lg:w-1/2">
+                <img id="gambar-produk" src="" alt="Produk" class="w-full h-[450px] object-cover rounded-lg shadow" />
+            </div>
+            <div class="lg:w-1/2 flex flex-col justify-between">
+                <div>
+                    <h2 id="nama-produk" class="text-4xl font-bold text-[#129990] mb-4"></h2>
+                    <p id="harga-produk" class="text-2xl font-semibold text-gray-800 mb-6"></p>
+                    <p id="deskripsi-produk" class="text-lg text-gray-700 leading-relaxed mb-8"></p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div>
+                            <p class="text-sm text-gray-500 mb-1">Hubungi Penjual:</p>
+                            <a id="kontak-produk" href="#"
+                                class="text-xl text-[#129990] font-semibold hover:underline"></a>
+                        </div>
+                        <a href="belanja.html"
+                            class="inline-block text-[#129990] hover:underline text-lg font-semibold transition">
+                            ← Kembali
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e7e78] text-white mt-20">
+        <div class="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm md:text-base">
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Desa Cikelat</h3>
+                <p>Kecamatan Cisolok, Kabupaten Sukabumi<br />Provinsi Jawa Barat, Indonesia</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Navigasi</h3>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="profil.html" class="hover:underline">Profil Desa</a></li>
+                    <li><a href="infografis.html" class="hover:underline">Infografis</a></li>
+                    <li><a href="peta.html" class="hover:underline">Peta</a></li>
+                    <li><a href="berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="belanja.html" class="hover:underline">Belanja</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-2">Kontak</h3>
+                <p>Email: <a href="mailto:info@desacikelat.id" class="underline">info@desacikelat.id</a></p>
+                <p>Telepon: <a href="tel:+6281234567890" class="underline">+62 812-3456-7890</a></p>
+            </div>
+        </div>
+        <div class="text-center py-4 border-t border-white/20 text-sm bg-[#0c605b]">
+            &copy; 2025 Desa Cikelat. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const produkDummy = [
+            {
+                nama: "Keripik Pisang Cikelat",
+                harga: "Rp12.000",
+                gambar: "https://picsum.photos/seed/keripikpisang/600/400",
+                kontak: "0812-3456-1001",
+                deskripsi: "Keripik pisang manis dan renyah khas Desa Cikelat, cocok untuk camilan harian."
+            },
+            {
+                nama: "Madu Hutan Asli",
+                harga: "Rp45.000",
+                gambar: "https://picsum.photos/seed/madu/600/400",
+                kontak: "0812-3456-1002",
+                deskripsi: "Madu alami dari hutan sekitar Gunung Halimun, tanpa tambahan bahan kimia."
+            },
+            {
+                nama: "Sambal Terasi Cikelat",
+                harga: "Rp15.000",
+                gambar: "https://picsum.photos/seed/sambal/600/400",
+                kontak: "0812-3456-1003",
+                deskripsi: "Sambal terasi pedas gurih racikan warga lokal, cocok untuk semua hidangan."
+            },
+            {
+                nama: "Kerajinan Bambu Miniatur",
+                harga: "Rp35.000",
+                gambar: "https://picsum.photos/seed/bambu/600/400",
+                kontak: "0812-3456-1004",
+                deskripsi: "Kerajinan tangan dari bambu berbentuk miniatur rumah dan hewan, unik dan estetik."
+            },
+            {
+                nama: "Kopi Bubuk Gunung Halimun",
+                harga: "Rp28.000",
+                gambar: "https://picsum.photos/seed/kopi/600/400",
+                kontak: "0812-3456-1005",
+                deskripsi: "Kopi robusta lokal dengan cita rasa khas pegunungan yang kuat dan nikmat."
+            },
+            {
+                nama: "Paket Herbal Kesehatan",
+                harga: "Rp60.000",
+                gambar: "https://picsum.photos/seed/herbal/600/400",
+                kontak: "0812-3456-1006",
+                deskripsi: "Paket ramuan herbal dari tanaman lokal untuk menjaga daya tahan tubuh."
+            },
+            {
+                nama: "Minyak Kelapa Murni",
+                harga: "Rp25.000",
+                gambar: "https://picsum.photos/seed/minyakkelapa/600/400",
+                kontak: "0812-3456-1007",
+                deskripsi: "Minyak kelapa alami hasil olahan tradisional, bisa untuk masak dan perawatan tubuh."
+            },
+            {
+                nama: "Keripik Singkong Pedas",
+                harga: "Rp10.000",
+                gambar: "https://picsum.photos/seed/singkong/600/400",
+                kontak: "0812-3456-1008",
+                deskripsi: "Keripik singkong dengan bumbu pedas khas, renyah dan bikin ketagihan."
+            },
+            {
+                nama: "Teh Hitam Lokal",
+                harga: "Rp18.000",
+                gambar: "https://picsum.photos/seed/tehhitam/600/400",
+                kontak: "0812-3456-1009",
+                deskripsi: "Teh hitam dari kebun teh lokal, nikmat diseduh hangat maupun dingin."
+            },
+            {
+                nama: "Gula Aren Asli",
+                harga: "Rp22.000",
+                gambar: "https://picsum.photos/seed/gulaaren/600/400",
+                kontak: "0812-3456-1010",
+                deskripsi: "Gula aren murni tanpa pengawet, manis alami dari nira pohon aren."
+            },
+            {
+                nama: "Topi Rajut Tradisional",
+                harga: "Rp40.000",
+                gambar: "https://picsum.photos/seed/topirajut/600/400",
+                kontak: "0812-3456-1011",
+                deskripsi: "Topi rajut hasil karya ibu-ibu PKK Desa, nyaman dan modis untuk aktivitas harian."
+            },
+            {
+                nama: "Sabun Herbal Alami",
+                harga: "Rp20.000",
+                gambar: "https://picsum.photos/seed/sabunherbal/600/400",
+                kontak: "0812-3456-1012",
+                deskripsi: "Sabun dari bahan herbal alami, baik untuk kulit sensitif dan tanpa bahan kimia."
+            }
+        ];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = parseInt(urlParams.get('id'));
+        const produk = produkDummy[id];
+
+        if (produk) {
+            document.getElementById('nama-produk').textContent = produk.nama;
+            document.getElementById('harga-produk').textContent = produk.harga;
+            document.getElementById('deskripsi-produk').textContent = produk.deskripsi;
+            document.getElementById('gambar-produk').src = produk.gambar;
+            document.getElementById('gambar-produk').alt = produk.nama;
+            document.getElementById('kontak-produk').textContent = produk.kontak;
+            document.getElementById('kontak-produk').href = `https://wa.me/${produk.kontak.replace(/[^0-9]/g, '')}`;
+        } else {
+            document.querySelector('main').innerHTML = `<p class="text-center text-red-600">Produk tidak ditemukan.</p>`;
+        }
+    </script>
+
+    <script>
+        // Highlight menu yang sesuai dengan URL sekarang
+        const currentPage = window.location.pathname.split("/").pop();
+        const navLinks = document.querySelectorAll("nav a");
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            if (href === currentPage) {
+                link.classList.add("underline", "text-white");
+            } else {
+                link.classList.remove("underline");
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
